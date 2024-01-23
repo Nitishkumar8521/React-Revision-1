@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Boilerplate Code</title>
+</head>
+<body>
+    <div id="root"></div>
+		<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+	  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+	  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+    function User({name , age , email}){
+        return(
+            <p>Name: {name} Age: {age} Email: {email}</p>
+        )
+    }
+
+    function ScoreCard(){
+        return <h4>Score: 100</h4>
+    }
+
+    function ContainerWithBlueBorder(prop){
+        return (
+            <div style={{border:"2px solid blue",padding:"30px" , margin:"20px"}}>
+                 {prop.children}
+            </div>
+        )
+    }
+
+    function App(){
+        return (
+                <div>
+                <ContainerWithBlueBorder>
+                <User name="Nitish"  age="23"  email="nkk7367054@gmail.com" />
+                </ContainerWithBlueBorder>
+                <ContainerWithBlueBorder>
+                <ScoreCard />
+                </ContainerWithBlueBorder>
+                </div>
+        )
+    }
+
+    let root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />)
+    </script>
+</body>
+</html>
+
